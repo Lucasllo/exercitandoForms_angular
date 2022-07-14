@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'exercitandoForms';
+
+  myForm = new FormGroup({
+    nome: new FormControl(''),
+    endereco: new FormControl('')
+  })
+
+  onSubmit(){
+    console.log(this.myForm.value);
+  }
+
 }
